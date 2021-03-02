@@ -32,3 +32,14 @@ gtkwave output/game_of_life_tb.vcd
 ``` 
 
 _Note: GTKWave cannot output custom type signals (only bits) on the waveform._
+
+
+# Issues
+_Note: This is only works as a simulation yet, not tested for FPGA. The issues listed below are problems for hardware integration._
+
+- Input should be in testbench.
+- input should arrive in portions for scalability. 
+- OFL should not be connected to the clock, but to state. This way NSL and OFL would also be separated, which improves code readability.
+- Variables should only be used for debugging. 
+- Every pixel should be loaded only once.
+- Processing pixels should be better scalable.
